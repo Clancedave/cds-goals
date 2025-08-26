@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>
-        M Y  G O A L S
+        M Y  G O A L S  T R A C K E R 
       </Text>
       <Link style={styles.link} href="/goals">
         View Your Goals
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
   link: {
     marginVertical: 20,
     padding: 16,
-    backgroundColor: '#21cc8d',
+    backgroundColor: '#eef10cff',
     color: 'white',
     borderRadius: 8,
   },
