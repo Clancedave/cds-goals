@@ -3,42 +3,54 @@ import { Ionicons } from "@expo/vector-icons"
 import { GoalsProvider } from '../../contexts/GoalsContext'
 
 export default function GoalsLayout() {
-
   return (
     <GoalsProvider>
-    <Tabs
-      screenOptions={{
-        headerShown: false,
-        tabBarActiveTintColor: 'black',
-        tabBarInactiveTintColor: 'grey',
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Your Goals',
-          tabBarIcon: ({ focused }) => (
-            <Ionicons 
-              size={24} 
-              name={focused ? 'home' : 'home-outline'} 
-              color="black"
-            />
-          ),
-        }}
-      />
-      <Tabs.Screen
-        name="create"
-        options={{
-          title: 'Create Goal',
-          tabBarIcon: ({ focused }) => (
-            <Ionicons 
-              size={24} 
-              name={focused ? 'create' : 'create-outline'} 
-              color="black"
-            />
-          ),
-        }}
-      />
-    </Tabs>
+      <Tabs
+        screenOptions={{
+          headerShown: false,
+          tabBarActiveTintColor: 'black',
+          tabBarInactiveTintColor: 'grey',
+        }}>
+        <Tabs.Screen
+          name="index"
+          options={{
+            title: 'Your Goals',
+            tabBarIcon: ({ focused }) => (
+              <Ionicons 
+                size={24} 
+                name={focused ? 'home' : 'home-outline'} 
+                color="black"
+              />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="create"
+          options={{
+            title: 'Create Goal',
+            tabBarIcon: ({ focused }) => (
+              <Ionicons 
+                size={24} 
+                name={focused ? 'create' : 'create-outline'} 
+                color="black"
+              />
+            ),
+          }}
+        />
+        <Tabs.Screen
+          name="updategoals"
+          options={{
+            title: 'Update Goal',
+            tabBarIcon: ({ focused }) => (
+              <Ionicons 
+                size={24} 
+                name={focused ? 'pencil' : 'pencil-outline'} 
+                color="black"
+              />
+            ),
+          }}
+        />
+      </Tabs>
     </GoalsProvider>
   )
 }

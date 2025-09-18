@@ -1,12 +1,12 @@
-import { useContext } from "react"
+import { useContext } from "react";
 import { GoalsContext } from "../contexts/GoalsContext";
 
 export function useGoals() {
-  const context = useContext(GoalsContext)
+  const context = useContext(GoalsContext);
 
   if (!context) {
-    throw new Error(`Outside the scope of the Goals Provider.`)
+    throw new Error("useGoals must be used inside GoalsProvider.");
   }
 
-  return context
+  return context;
 }
