@@ -49,7 +49,7 @@ const Goals = () => {
       style={styles.gradientContainer}
     >
       <SafeAreaView style={styles.container}>
-        <Text style={styles.title}>Your Goals</Text>
+        <Text style={styles.title}>New Message</Text>
 
         <FlatList
           data={goals}

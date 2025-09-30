@@ -36,7 +36,7 @@ const Create = () => {
       style={styles.gradientContainer}
     >
       <SafeAreaView style={styles.container}>
-        <Text style={styles.title}>Create a New Goal</Text>
+        <Text style={styles.title}>Create a New Message</Text>
 
         <TextInput
           style={styles.input}

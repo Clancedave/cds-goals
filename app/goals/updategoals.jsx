@@ -51,7 +51,11 @@ const UpdateGoals = () => {
 
   // Gradient Button Component
   const GradientButton = ({ onPress, children, style }) => (
-    <TouchableOpacity onPress={onPress} activeOpacity={0.8} style={{ marginVertical: 8, ...style }}>
+    <TouchableOpacity
+      onPress={onPress}
+      activeOpacity={0.8}
+      style={{ marginVertical: 8, alignSelf: "center", ...style }}
+    >
       <LinearGradient
         colors={["#FFA500", "#FF8C00"]}
         start={{ x: 0, y: 0 }}
@@ -114,26 +118,31 @@ const UpdateGoals = () => {
           behavior={Platform.OS === "ios" ? "padding" : "height"}
           style={{ flex: 1, width: "100%" }}
         >
-          <ScrollView contentContainerStyle={{ flexGrow: 1, justifyContent: "center" }}>
-            <Text style={styles.title}>Update Goal</Text>
-            <View style={styles.form}>
-              <TextInput
-                style={styles.input}
-                value={goalText}
-                onChangeText={setGoalText}
-                placeholder="Goal"
-                placeholderTextColor="rgba(255,255,255,0.7)"
-              />
-              <TextInput
-                style={styles.input}
-                value={progress}
-                onChangeText={setProgress}
-                placeholder="Progress"
-                keyboardType="numeric"
-                placeholderTextColor="rgba(255,255,255,0.7)"
-              />
-              <GradientButton onPress={handleUpdate}>Save</GradientButton>
-              <GradientButton onPress={() => router.back()}>Cancel</GradientButton>
+          <ScrollView
+            contentContainerStyle={styles.scrollContent}
+            keyboardShouldPersistTaps="handled"
+          >
+            <View style={styles.inner}>
+              <Text style={styles.title}>Update Goal</Text>
+              <View style={styles.form}>
+                <TextInput
+                  style={styles.input}
+                  value={goalText}
+                  onChangeText={setGoalText}
+                  placeholder="Goal"
+                  placeholderTextColor="rgba(255,255,255,0.7)"
+                />
+                <TextInput
+                  style={styles.input}
+                  value={progress}
+                  onChangeText={setProgress}
+                  placeholder="Progress"
+                  keyboardType="numeric"
+                  placeholderTextColor="rgba(255,255,255,0.7)"
+                />
+                <GradientButton onPress={handleUpdate}>Save</GradientButton>
+                <GradientButton onPress={() => router.back()}>Cancel</GradientButton>
+              </View>
             </View>
           </ScrollView>
         </KeyboardAvoidingView>
@@ -150,8 +159,15 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    padding: 24,
+  },
+  scrollContent: {
+    flexGrow: 1,
     justifyContent: "center",
+    alignItems: "center",
+    padding: 24,
+  },
+  inner: {
+    width: "100%",
     alignItems: "center",
   },
   title: {
@@ -163,6 +179,7 @@ const styles = StyleSheet.create({
   },
   form: {
     width: width > 500 ? 400 : "100%",
+    alignItems: "center",
   },
   input: {
     borderWidth: 1,
@@ -171,11 +188,13 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     backgroundColor: "rgba(255,255,255,0.3)",
     color: "white",
+    width: "100%",
   },
   button: {
     paddingVertical: 15,
     borderRadius: 10,
     alignItems: "center",
+    width: 200,
   },
   buttonText: {
     color: "white",

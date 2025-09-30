@@ -56,7 +56,7 @@ const Home = () => {
       end={{ x: 1, y: 1 }}
       style={styles.container}
     >
-      <Text style={styles.title}>T A L K S Y  T R A C K E R</Text>
+      <Text style={styles.title}>T A L K S Y</Text>
 
       <GradientButton onPress={() => handleProtectedNav("/goals")}>
         View Your Goals
